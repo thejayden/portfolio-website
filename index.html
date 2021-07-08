@@ -4,6 +4,22 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+
+<style> 
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+	@font-face {
+	   font-family: RudaRegular;
+	   src: url('./assets/fonts/Ruda-Regular.ttf');
+	}
+	
+	/* @font-face {
+	   font-family: myFirstFont;
+	   src: url('https://fonts.googleapis.com/css?family=Work+Sans:300,400');
+	   font-weight: bold;
+	}
+	 */
+</style>
+
 <html>
 	<head>
 		<title>Jia Dian's Site</title>
@@ -20,11 +36,28 @@
 				<div class="inner">
 					<nav>
 						<ul>
+							<!-- <div class="avatar" style="justify-content: center; align-items: center; display: flex;">
+								<li>
+									<img src="images/Headshot.jpg" class="headshot">
+								</li>
+							</div> -->
+							<!-- <div class="avatar"></div> -->
+							<li class="avatar" style="justify-content: center; align-items: center;">
+								<img src="images/Headshot.jpg" class="headshot">
+							</li>
+							<!-- <li style="justify-content: center; align-items: center; display: flex;">
+								<img src="images/Headshot.jpg" class="headshot">
+							</li> -->
 							<li><a href="#intro">About Me</a></li>
 							<li><a href="#one">Projects</a></li>
 							<li><a href="#two">Experience (U/C)</a></li>
 							<li><a href="#three">Contact (U/C)</a></li>
 						</ul>
+						<!-- <ul>
+							<li style="justify-content: center; align-items: center; display: flex;">
+								<img src="images/Headshot.jpg" class="headshot">
+							</li>
+						</ul> -->
 					</nav>
 				</div>
 			</section>
@@ -35,7 +68,7 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Hi! My name is Jia Dian.</h1>
+							<h1 style="font-family:RudaRegular; letter-spacing: .15em;"></h1>
 							<p style="color:#2626266e;">Or you can call me JD for short&#128516 An aspiring Software Engineer, I like to analyze and solve problems with an interest in programming. I like to seek meaning in what I do and have a keen eye for design too! Welcome to my portfolio site!</p>
 							<!-- <p style="color:#ffd793;">Or you can just call me JD. I am a  <a href="http://html5up.net">HTML5 UP</a><br />
 								and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p> -->
@@ -52,7 +85,7 @@
 							<div class="content">
 								<div class="inner">
 									<h2 style="color: #ffd793c4;">IM1003 Object Oriented Programming With Java - Sudoku Project </h2>
-									<p>This is a module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing) </p>
+									<p style="font-family: 'Roboto', sans-serif;">This is a module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing) </p>
 									<ul class="actions">
 										<li><a href="https://github.com/JiaWeiPls/IM1003-Sudoku-With-Java" target="_blank" class="button">GitHub</a></li>
 										<li style="margin-top: 0.8%;">
@@ -74,7 +107,7 @@
 							<div class="content">
 								<div class="inner">
 									<h2 style="color: #ffd793c4;">2019 Summer Project - Magical Musical Box “Learning to Program through Music”</h2>
-									<p>A project aiming to emulate a musical setup that can play midi tunes using electrical and electronic parts with Arduino programming. Electronic parts includes: Stepper motors, servos, relays, buzzers, Arduino Unos and Nanos.</p>
+									<p style="font-family: 'Roboto', sans-serif;">A project aiming to emulate a musical setup that can play midi tunes using electrical and electronic parts with Arduino programming. Electronic parts includes: Stepper motors, servos, relays, buzzers, Arduino Unos and Nanos.</p>
 									<ul class="actions">
 										<li><a href="https://youtu.be/CL0bje7n0ow" target="_blank" class="button">Video</a></li>
 										<li style="margin-top: 0.8%;">
@@ -408,6 +441,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/typewriter.js"></script>
+			<script src="assets/js/typewriter2.js"></script>
 
 	</body>
 </html>

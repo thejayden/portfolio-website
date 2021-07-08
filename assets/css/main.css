@@ -1,7 +1,17 @@
 @import url(fontawesome-all.min.css);
 
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Roboto:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400');
 
+@font-face {
+	font-family: RudaRegular;
+	src: url('./assets/fonts/Ruda-Regular.ttf');
+ }
+
+/* @font-face {
+	font-family: myFirstFont;
+	src: url(sansation_light.woff);
+ } */ 
 
 /*
 	Hyperspace by HTML5 UP
@@ -85,6 +95,57 @@ input, select, textarea {
 	appearance: none;
 }
 
+/*section header*/
+
+section .content .inner h2 {
+	font-family: RudaRegular;
+	/* font-family: 'Advent Pro', sans-serif; */
+}
+
+/*section paragraph*/
+
+section .content .inner p{
+	font-family: Arial, Helvetica, sans-serif;
+	/* font-family: Roboto, sans-serif; */
+	/* font-family: 'Advent Pro', sans-serif; */
+}
+
+/*type writer*/
+
+.typewriter{
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+  	border-right: .15em solid rgb(255, 255, 255); /* The typwriter cursor */
+  	white-space: nowrap; /* Keeps the content on a single line */
+  	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  	letter-spacing: .15em; /* Adjust as needed */
+  	animation: 
+    	typing 3.5s steps(30, end),
+    	blink-caret .5s step-end infinite;
+}
+/* The typing effect */
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: rgb(255, 255, 255) }
+  }
+
+/*another typewriter effect*/
+ .writer {
+	border-right: .05em solid;
+	animation: caret 1s steps(1) infinite;
+  }
+  
+  @keyframes caret {
+	50% {
+	  border-color: transparent;
+	}
+  }
+
 /* tag*/
 
 .tag-container {
@@ -161,6 +222,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
 		font-family: Arial, Helvetica, sans-serif;
+		/* font-family: Roboto, sans-serif; */
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
@@ -2825,6 +2887,99 @@ button,
 				width: 100%;
 			}
 
+/* Headshot */
+
+	.headshot {
+		/* height: 100vh; */
+		/* display: flex; */
+		/* justify-content: center; */
+		/* align-items: center; */
+		width: 150px;
+		clip-path: circle();
+		/* border-radius: 90% 60% 60% 60%; */
+		/* border: 2px solid; */
+		/* border-color: black; */
+	}
+
+	@media screen and (max-width: 1280px) {
+		.headshot{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.headshot{
+			display: none;
+		}
+	}
+
+/* div avatar */
+
+	.avatar{
+		height: 160px;
+		width: 160px;
+		/* position: relative; */
+		transform: translate(-50%,-50%);
+		/* top: auto; */
+		left: 15%;
+		border-radius: 80px;
+		box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+		overflow: hidden;
+	}
+	.avatar:before{
+		content: "";
+		height: 500%;
+		width: 500%;
+		position: absolute;
+		background: conic-gradient(
+			/* #fd004c, */
+			/* #fe9000, */
+			/* #fff020, */
+			/* #3edf4b, */
+			/* #3363ff, */
+			/* #b102b7, */
+			/* #fd004c */
+			#ffa90a,
+			#ffd793,
+			#999999,
+			#262626,
+			#999999,
+			#ffd793,
+			#ffa90a
+			/* #262626 */
+		);
+		/* left: -25%;
+		top: -25%; */
+		animation: spin 3s infinite linear;
+	}
+
+	@keyframes spin{
+		100%{
+			transform: rotate(-360deg);
+		}
+	}
+	@media screen and (max-width: 1280px) {
+		.avatar{
+			display: none;
+			content: none;
+		}
+		.avatar:before{
+			display: none;
+			content: none;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.avatar{
+			display: none;
+			content: none;
+		}
+		.avatar:before{
+			display: none;
+			content: none;
+		}
+	}
+
 /* List */
 
 	ol {
@@ -3785,6 +3940,10 @@ button,
 			list-style: none;
 			padding: 0;
 		}
+			#sidebar nav ul .avatar {
+				display: flex;
+				/* content: none; */
+			}
 
 			#sidebar nav > ul > li {
 				-moz-transform: translateY(0);
@@ -3979,14 +4138,14 @@ button,
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #ffa90a, #ffd793);
-				background-image: -webkit-linear-gradient(to right, #ffa90a, #ffd793);
-				background-image: -ms-linear-gradient(to right, #ffa90a, #ffd793);
-				background-image: linear-gradient(to right, #ffa90a, #ffd793);
-				-moz-transition: max-width 0.2s ease;
-				-webkit-transition: max-width 0.2s ease;
-				-ms-transition: max-width 0.2s ease;
-				transition: max-width 0.2s ease;
+				background-image: -moz-linear-gradient(to right, #CC9900, #ffd793);
+				background-image: -webkit-linear-gradient(to right, #CC9900, #ffd793);
+				background-image: -ms-linear-gradient(to right, #CC9900, #ffd793);
+				background-image: linear-gradient(to right, #CC9900, #ffd793);
+				-moz-transition: max-width 0.4s ease;
+				-webkit-transition: max-width 0.4s ease;
+				-ms-transition: max-width 0.4s ease;
+				transition: max-width 0.4s ease;
 				max-width: 0;
 			}
 
@@ -4061,6 +4220,10 @@ button,
 							line-height: inherit;
 							margin: 0 0 0 2em;
 							padding: 0;
+						}
+						#sidebar nav ul .avatar {
+							display: none;
+							content: none;
 						}
 
 					#sidebar nav a {
