@@ -2941,10 +2941,12 @@ button,
 			/* #fd004c */
 			#ffa90a,
 			#ffd793,
-			#999999,
+			#ff800a,
+			/* #999999,
 			#262626,
-			#999999,
+			#999999, */
 			#ffd793,
+			#ff800a,
 			#ffa90a
 			/* #262626 */
 		);
@@ -3377,6 +3379,9 @@ button,
 			display: block;
 			position: relative;
 			width: 25em;
+			opacity: 50%;
+			/* filter: drop-shadow(1px -2px 300px rgb(255, 225, 0)) sepia(0.5); */
+			filter:  sepia(0.3);
 		}
 
 			.spotlights > section > .image img {
@@ -3398,6 +3403,24 @@ button,
 				position: absolute;
 				top: 0;
 				width: 100%;
+			}
+
+			.spotlights > section > .image:hover {
+				/* -moz-transition: opacity 1s ease;
+				-webkit-transition: opacity 1s ease;
+				-ms-transition: opacity 1s ease;
+				transition: opacity 1s ease;
+				background: rgba(255, 153, 0, 0.501);
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0; */
+				opacity: 90%;
+				filter: drop-shadow(1px -2px 30px rgb(255, 225, 0));
+				/* filter: sepia(0); */
+				/* position: absolute;
+				top: 0;
+				width: 100%; */
 			}
 
 		.spotlights > section > .content {
@@ -3437,6 +3460,19 @@ button,
 		.spotlights > section:nth-child(3) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
+		.spotlights > section:nth-child(4) {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+		.spotlights > section:nth-child(5) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		.spotlights > section:nth-child(6) {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+		.spotlights > section:nth-child(7) {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
 
 		.spotlights > section.inactive > .image:before,
 		body.is-preload .spotlights > section > .image:before {
@@ -3519,7 +3555,7 @@ button,
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(255, 255, 255, 0.05);
+				background-color: rgba(255, 0, 0, 0.05);
 			}
 
 		table td {
