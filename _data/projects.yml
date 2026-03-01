@@ -2,7 +2,7 @@
   image: "images/sudoku-menu2.jpg"
   imagePosition: "center center"
   description: >
-    This is a module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing)
+    A module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing)
   links:
     - url: "https://github.com/JiaWeiPls/IM1003-Sudoku-With-Java"
       label: "Github"
@@ -11,7 +11,7 @@
     - "OOP"
 
 - title: "Summer Project – Magical Musical Box"
-  image: "images/summer-proj.jpg"
+  image: "images/harrison-broadbent-fZB51omnY_Y-unsplash.jpg"
   imagePosition: "center center"
   description: >
     A project aiming to emulate a musical setup that can play MIDI tunes using
