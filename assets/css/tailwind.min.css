@@ -1,0 +1,7 @@
+/*
+ * Tailwind CSS – utilities only.
+ *
+ * `preflight` (the CSS reset) is disabled in tailwind.config.js because the
+ * Hyperspace SCSS already ships its own normalization layer.  Adding base and
+ * component layers here would cause conflicts.
+ */

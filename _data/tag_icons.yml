@@ -1,0 +1,44 @@
+# Maps project tag names to icon classes.
+# Devicon: https://devicon.dev  (loaded via CDN in head.html)
+# FontAwesome 5 (fas/fab): already bundled in main.css
+
+- { tag: "Java",                   icon: "devicon-java-plain" }
+- { tag: "OOP",                    icon: "fas fa-cubes" }
+- { tag: "Arduino / C++",          icon: "devicon-arduino-plain" }
+- { tag: "Hardware",               icon: "fas fa-microchip" }
+- { tag: "3D Printing",            icon: "fas fa-cube" }
+- { tag: "Unity",                  icon: "devicon-unity-plain" }
+- { tag: "C#",                     icon: "devicon-csharp-plain" }
+- { tag: "MySQL",                  icon: "devicon-mysql-plain" }
+- { tag: "Spring",                 icon: "devicon-spring-plain" }
+- { tag: "Spring Boot",            icon: "devicon-spring-plain" }
+- { tag: "React",                  icon: "devicon-react-original" }
+- { tag: "ReactJS",                icon: "devicon-react-original" }
+- { tag: "JSX",                    icon: "devicon-react-original" }
+- { tag: "HTML",                   icon: "devicon-html5-plain" }
+- { tag: "CSS",                    icon: "devicon-css3-plain" }
+- { tag: "JavaScript",             icon: "devicon-javascript-plain" }
+- { tag: "Bootstrap",              icon: "devicon-bootstrap-plain" }
+- { tag: "Axios",                  icon: "fas fa-exchange-alt" }
+- { tag: "Python",                 icon: "devicon-python-plain" }
+- { tag: "Jupyter",                icon: "devicon-jupyter-plain" }
+- { tag: "Machine Learning",       icon: "fas fa-brain" }
+- { tag: "Problem Solving",        icon: "fas fa-lightbulb" }
+- { tag: "IBM Cloud Technologies", icon: "fas fa-cloud" }
+- { tag: "Flutter",                icon: "devicon-flutter-plain" }
+- { tag: "Dart",                   icon: "devicon-dart-plain" }
+- { tag: "Firebase",               icon: "devicon-firebase-plain" }
+- { tag: "Git",                    icon: "devicon-git-plain" }
+- { tag: "Project Management",     icon: "fas fa-tasks" }
+- { tag: "Ansible",                icon: "devicon-ansible-plain" }
+- { tag: "SSH",                    icon: "fas fa-terminal" }
+- { tag: "REST API",               icon: "fas fa-plug" }
+- { tag: "Jira",                   icon: "devicon-jira-plain" }
+- { tag: "Kubernetes",             icon: "devicon-kubernetes-plain" }
+- { tag: "Docker",                 icon: "devicon-docker-plain" }
+- { tag: "Jenkins",                icon: "devicon-jenkins-plain" }
+- { tag: "PHP",                    icon: "devicon-php-plain" }
+- { tag: "Wireframing",            icon: "fas fa-pencil-ruler" }
+- { tag: "Database Design",        icon: "fas fa-database" }
+- { tag: "API Testing",            icon: "fas fa-vial" }
+- { tag: "Postman",                icon: "devicon-postman-plain" }

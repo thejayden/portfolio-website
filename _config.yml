@@ -1,3 +1,21 @@
-theme: jekyll-theme-cayman
+title: "Jia Dian's Portfolio"
+description: "A portfolio site to showcase my technical projects and journey to becoming a software engineer!"
+url: "https://thejayden.github.io"
+baseurl: "/portfolio-website"
+
 plugins:
   - jekyll-seo-tag
+
+# Exclude build tooling and helper scripts from the generated site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - tailwind.config.js
+  - assets/css/tailwind.css
+  - _scripts/
+  - README.txt
+  - README.md
+  - LICENSE.txt

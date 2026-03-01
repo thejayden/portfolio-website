@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400");
 @font-face {
   font-family: RudaRegular;
-  src: url("./assets/fonts/Ruda-Regular.ttf");
+  src: url("../fonts/Ruda-Regular.ttf");
 }
 
 /* @font-face {
@@ -191,8 +191,8 @@ section .content .inner h2 {
 /*section paragraph*/
 
 section .content .inner p {
-  font-family: Arial, Helvetica, sans-serif;
-  /* font-family: Roboto, sans-serif; */
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Roboto, sans-serif;
   /* font-family: 'Advent Pro', sans-serif; */
 }
 
@@ -253,7 +253,8 @@ section .content .inner p {
 .tag-container {
   display: flex;
   flex-flow: row wrap;
-  font-family: "Work Sans", sans-serif;
+  /* font-family: "Work Sans", sans-serif; */
+  font-family: Roboto, sans-serif;
 }
 
 .tag {
@@ -268,7 +269,7 @@ section .content .inner p {
 .tag::before {
   /* pointer-events: all; */
   display: inline-block;
-  content: "</>";
+  /* content: "</>"; */
   height: 20px;
   width: 20px;
   margin-right: 6px;

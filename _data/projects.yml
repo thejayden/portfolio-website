@@ -1,0 +1,159 @@
+- title: "IM1003 – Sudoku Project"
+  image: "images/sudoku-menu2.jpg"
+  imagePosition: "center center"
+  description: >
+    This is a module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing)
+  links:
+    - url: "https://github.com/JiaWeiPls/IM1003-Sudoku-With-Java"
+      label: "Github"
+  tags:
+    - "Java"
+    - "OOP"
+
+- title: "Summer Project – Magical Musical Box"
+  image: "images/summer-proj.jpg"
+  imagePosition: "center center"
+  description: >
+    A project aiming to emulate a musical setup that can play MIDI tunes using
+    electrical and electronic parts with Arduino programming. Electronic parts
+    include stepper motors, servos, relays, buzzers, Arduino Unos and Nanos.
+  links:
+    - url: "https://youtu.be/CL0bje7n0ow"
+      label: "Video"
+  tags:
+    - "Arduino / C++"
+    - "Hardware"
+    - "3D Printing"
+
+- title: "IM2073 – Unity RPG Game"
+  image: "images/unity-proj3.jpg"
+  imagePosition: "center center"
+  description: >
+    One of two mini-projects within the IM2073 module. A third-person Role
+    Playing Game where the player completes objectives within a time limit while
+    collecting power-ups and evading enemies. Built with Unity using C#.
+  links:
+    - url: "https://github.com/LDulguun/IM2073"
+      label: "GitHub"
+  tags:
+    - "Unity"
+    - "C#"
+
+- title: "IM2073 – Eshop Spring-React Web Application"
+  image: "images/starwars3.png"
+  imagePosition: "center center"
+  description: >
+    The second project for IM2073. Originally tasked to build a web shop using
+    Java Servlets and Tomcat; revamped to use Spring Boot as the backend and
+    React as the frontend, with MySQL as the database.
+  links:
+    - url: "https://github.com/LDulguun/IM2073"
+      label: "GitHub"
+    - url: "https://starwars-eshop.onrender.com"
+      label: "Website"
+  tags:
+    - "MySQL"
+    - "Java"
+    - "Spring"
+    - "React"
+    - "HTML"
+    - "JSX"
+    - "Axios"
+
+- title: "EE0005 – Intro to Data Science and Artificial Intelligence"
+  image: "images/DSAI.jpg"
+  imagePosition: "center center"
+  description: >
+    An introductory module to DSAI covering machine learning techniques, models,
+    and basic theory. For the final project, my team analysed a mock IBM HR
+    dataset to identify factors contributing to employee attrition.
+  links:
+    - url: "https://entuedu-my.sharepoint.com/:p:/g/personal/jtan457_e_ntu_edu_sg/EYOaDe2e4n9Frgou-WtB3uIBvINlCEupQX-B1ukg3pLgpg?e=gaDVeH"
+      label: "Presentation Slides"
+  tags:
+    - "Machine Learning"
+    - "Python"
+    - "Jupyter"
+
+- title: "SCDF × IBM Hackathon: Elderly Care Smart Solution"
+  image: "images/scdf-ibm.jpg"
+  imagePosition: "top 34% center"
+  description: >
+    My first hackathon with a group of NTU friends. Problem statement: with more
+    elderly people living alone in Singapore, there is high risk of undetected
+    emergencies. Our solution uses a smartwatch IoT device with machine learning
+    to detect fall risk and heart rate, plus a chatbot to call emergency
+    responders.
+  links:
+    - url: "https://github.com/Wonieee/Quick-Reaction-Tech-Force-Elderly-Care-Smart-Solution_SCDFXIBM"
+      label: "GitHub"
+    - url: "https://youtu.be/aCYjLmXBKUI"
+      label: "Video"
+  tags:
+    - "Problem Solving"
+    - "JavaScript"
+    - "IBM Cloud Technologies"
+
+- title: "Own Project: Learning Front-End Web Development"
+  image: "images/react.jpg"
+  imagePosition: "right 50%"
+  description: >
+    During the COVID-19 Circuit Breaker period I took several Coursera courses,
+    including two-course specialisation on React and Bootstrap offered by
+    The Hong Kong University of Science and Technology.
+  links:
+    - url: "https://thejayden.github.io/RistoranteConFusion/"
+      label: "Website"
+    - url: "https://github.com/thejayden/Bootstrap-Website-RistoranteConFusion"
+      label: "Course 1"
+    - url: "https://github.com/thejayden/React-WebApp-RistoranteConFusion"
+      label: "Course 2"
+  tags:
+    - "ReactJS"
+    - "JavaScript"
+    - "Bootstrap"
+    - "HTML"
+    - "CSS"
+
+- title: "IM3080: The Friendly Planner – Flutter Mobile App"
+  image: "images/tfp3.jpg"
+  imagePosition: "center center"
+  description: >
+    I led a group of 10 coursemates to build a mobile application aimed at
+    improving collaboration and inclusiveness. The app's key feature is a shared
+    public calendar where users can browse interest-based events and communicate
+    with like-minded participants.
+  links:
+    - url: "https://github.com/ChenZengYao/LifeBalance-flutter"
+      label: "GitHub"
+    - url: "https://github.com/ChenZengYao/LifeBalance-flutter/blob/master/DemoNew.gif"
+      label: "Demo GIF"
+    - url: "https://www.youtube.com/watch?v=WgHod7sdYPU"
+      label: "Video"
+    - url: "https://isorandom95.wixsite.com/dipgrp6"
+      label: "Website"
+  tags:
+    - "Flutter"
+    - "Dart"
+    - "Firebase"
+    - "Git"
+    - "Project Management"
+
+- title: "IM4717: JY Movies – Web Application Design"
+  image: "images/cinema.jpg"
+  imagePosition: "left 50% top 70%"
+  description: >
+    A final-year elective project where a friend and I built a mock cinema
+    booking website using HTML, CSS, JavaScript, and PHP with a MySQL backend.
+    Features include browsing and searching movies, viewing showtimes, booking
+    tickets with seat selection, and managing bookings.
+  links:
+    - url: "https://jymovies.000webhostapp.com"
+      label: "Website"
+  tags:
+    - "HTML"
+    - "CSS"
+    - "PHP"
+    - "MySQL"
+    - "Wireframing"
+    - "Database Design"

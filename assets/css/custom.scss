@@ -1,0 +1,667 @@
+---
+---
+
+// Custom styles that complement the Hyperspace template.
+// Compiled by Jekyll's built-in Sass processor.
+
+// Colour token shared with tailwind.config.js
+$project-accent: rgba(255, 215, 147, 0.77);
+
+// ------------------------------------------------------------------
+// Intro section
+// ------------------------------------------------------------------
+
+.intro-name {
+  font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+  font-size: 2.75em;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  line-height: 1.5;  // top/bottom breathing room so the cursor sits centred
+  margin-bottom: 0.25em;
+}
+
+// Cursor rendered as a thin block via ::after — no extra span needed.
+// Solid while typing/deleting; JS adds .is-blinking once phrase is complete.
+#typed-heading::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #ffffff;
+  vertical-align: middle;
+  margin-left: 4px;
+  opacity: 1;
+}
+
+#typed-heading.is-blinking::after {
+  animation: blink-cursor 1s step-start infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.intro-sub {
+//   display: block;  // span is inline by default; block enables margin-bottom
+  font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+//   font-size: 1.2em;
+//   font-weight: 400;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 0.5em;
+}
+
+.intro-bio {
+  font-family: 'Roboto', 'Work Sans', Arial, sans-serif;
+//   font-weight: 400;
+  line-height: 1.7;
+  color: #1a1a1a6e;
+}
+
+// ------------------------------------------------------------------
+// Project cards
+// ------------------------------------------------------------------
+
+.project-title {
+  color: $project-accent;
+  font-size: 1.5em;
+  margin-bottom: 0.5em !important;
+}
+
+// Compress the spotlight rows — override the theme's fixed min-height
+// while keeping the translateX/opacity slide-in animation untouched
+#one.spotlights > section,
+#experience.spotlights > section {
+  min-height: 0 !important;
+
+  // Image: stretch to the content height and crop to fill
+  > .image {
+    align-self: stretch;
+    overflow: hidden;
+    cursor: default !important;
+
+    // Smooth the opacity + glow transition on the image itself
+    // (main.css applies opacity:50% base → opacity:90% + yellow drop-shadow on hover,
+    //  but has no transition on .image, causing a sudden jump)
+    transition: opacity 0.5s ease, filter 0.5s ease !important;
+
+    // Replace the harsh yellow glow with a warm orange on hover
+    &:hover {
+      filter: drop-shadow(0px 0px 22px rgba(207, 153, 37, 0.75)) !important;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+  }
+
+  // Compress content panel padding
+  > .content {
+    padding: 3em 4em !important;
+
+    // Tighten spacing between all direct children of .inner
+    // NOTE: do NOT touch .inner itself — its transform/opacity drive the animation
+    > .inner > * {
+      margin-bottom: 10em;
+    }
+
+    > .inner > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Paragraph text in project cards
+#one.spotlights > section > .content > .inner > p,
+#experience.spotlights > section > .content > .inner > p {
+  font-size: 0.875em;
+  line-height: 1.55;
+  margin-bottom: 1.25em !important;
+}
+
+// ul.actions row spacing — flush right
+#one.spotlights > section > .content > .inner ul.actions,
+#experience.spotlights > section > .content > .inner ul.actions {
+  margin-top: 0;
+  margin-bottom: 1.25em !important;
+  justify-content: flex-end;
+}
+
+// Smaller buttons inside project cards only
+#one.spotlights > section .button,
+#experience.spotlights > section .button {
+  font-size: 0.6em !important;
+  height: calc(3.25em + 2px) !important;
+  line-height: 3.25em !important;
+  padding: 0 2em !important;
+}
+
+// Icon + label tag badges
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  // gap: 0.001em;
+  margin-top: 0.35em;
+  overflow: visible;
+}
+
+// Allow tooltips to escape the content/inner containers
+#one.spotlights > section > .content,
+#one.spotlights > section > .content > .inner,
+#experience.spotlights > section > .content,
+#experience.spotlights > section > .content > .inner {
+  overflow: visible !important;
+}
+
+.tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.35em 0.6em;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 175, 40, 0.14),
+    rgba(255, 215, 147, 0.06)
+  );
+  color: $project-accent;
+  border: 1px solid rgba(255, 215, 147, 0.38);
+  box-shadow: 0 0 5px rgba(255, 175, 40, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  cursor: default;
+
+  i, .tag-fallback-text {
+    font-size: 1.25em;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .tag-label {
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    border-color: rgba(255, 215, 147, 0.7);
+    box-shadow: 0 0 10px rgba(255, 175, 40, 0.28);
+    color: rgba(255, 215, 147, 1);
+  }
+}
+
+// ------------------------------------------------------------------
+// Section dividers — expandable overlay panels
+// ------------------------------------------------------------------
+
+.section-divider {
+  position: relative;
+  z-index: 200;
+
+  &:hover {
+    .divider-chevron {
+      transform: rotate(180deg);
+      opacity: 0.85;
+    }
+    .section-divider-bar {
+      background: lighten(darken(#504224, 5%), 4%);
+      .divider-label { color: rgba(255, 255, 255, 0.6); }
+    }
+    .divider-panel {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+}
+
+.section-divider-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.85em 3em;
+  background: darken(#504224, 5%);
+  cursor: default;
+  transition: background 0.2s ease;
+  user-select: none;
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .divider-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    padding: 0 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7em;
+    color: rgba(255, 255, 255, 0.35);
+    font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .divider-chevron {
+    font-size: 1em;
+    opacity: 0.35;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    display: inline-block;
+    // Undo the letter-spacing gap applied to the parent .divider-label
+    letter-spacing: 0;
+  }
+}
+
+// Overlay panel — absolutely positioned so it overlays content without
+// affecting the document flow at all.
+.divider-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 999;
+  background: linear-gradient(
+    135deg,
+    rgba(70, 67, 65, 0.98),
+    rgba(62, 50, 27, 0.98)
+  );
+  backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255, 175, 40, 0.12);
+  border-bottom: 1px solid rgba(255, 175, 40, 0.08);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.55),
+              inset 0 1px 0 rgba(255, 215, 147, 0.05);
+
+  // Hidden by default
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+// ------------------------------------------------------------------
+// Divider panel — horizontal experience timeline
+// ------------------------------------------------------------------
+
+.divider-timeline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 72em;
+  margin: 0 auto;
+  padding: 2em 3em 1.75em;
+  position: relative;
+
+  // Horizontal connecting line through the dot centres
+  &::before {
+    content: '';
+    position: absolute;
+    // 2em top padding + 6px = half a 12px dot
+    top: calc(2em + 5px);
+    left: 3em;
+    right: 3em;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(255, 175, 40, 0.05),
+      rgba(255, 175, 40, 0.45) 20%,
+      rgba(255, 175, 40, 0.45) 80%,
+      rgba(255, 175, 40, 0.05)
+    );
+  }
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  gap: 0;
+  padding: 0 1em;
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 175, 40, 0.7);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 175, 40, 0.28),
+      rgba(255, 215, 147, 0.1)
+    );
+    box-shadow: 0 0 10px rgba(255, 175, 40, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.85em;
+  }
+
+  .timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2em;
+  }
+
+  .timeline-role {
+    font-weight: bold;
+    color: rgba(255, 215, 147, 0.9);
+    font-size: 0.82em;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+
+  .timeline-company {
+    color: rgba(255, 215, 147, 0.48);
+    font-size: 0.75em;
+    letter-spacing: 0.03em;
+  }
+
+  .timeline-period {
+    color: rgba(255, 255, 255, 0.28);
+    font-size: 0.68em;
+    letter-spacing: 0.07em;
+    margin-top: 0.1em;
+  }
+}
+
+// ------------------------------------------------------------------
+// Divider panel — section description blurb
+// ------------------------------------------------------------------
+
+.divider-description {
+  max-width: 56em;
+  margin: 0 auto;
+  padding: 1.5em 3em;
+
+  p {
+    color: rgba(255, 215, 147, 0.48);
+    font-size: 0.82em;
+    line-height: 1.7;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ------------------------------------------------------------------
+// Sidebar — back button (used on detail/blog pages)
+// ------------------------------------------------------------------
+
+// Positioned absolutely within the fixed #sidebar so it always sits
+// at the top-left corner regardless of .inner scroll position.
+.sidebar-back-row {
+  position: absolute;
+  top: 1.25em;
+  left: 1.5em;
+  z-index: 10;
+}
+
+.sidebar-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.75em;
+  font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.35) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: rgba(255, 215, 147, 0.8) !important;
+  }
+
+  // Suppress the arrow pseudo-elements main.css injects on all sidebar nav <a>
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
+
+// ------------------------------------------------------------------
+// Blog / experience detail page
+// ------------------------------------------------------------------
+
+// Hero band
+.blog-hero-inner {
+  max-width: 52em;
+}
+
+.blog-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.7em;
+  color: rgba(255, 215, 147, 0.55);
+  margin-bottom: 0.6em !important;
+}
+
+.blog-title {
+  font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+  font-size: 2.25em;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.45em !important;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  margin-bottom: 1em !important;
+
+  .blog-meta-role {
+    color: $project-accent;
+    font-size: 0.85em;
+    font-weight: bold;
+  }
+
+  .blog-meta-sep {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.85em;
+  }
+
+  .blog-meta-period {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+  }
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.blog-tag {
+  padding: 0.25em 0.7em;
+  border-radius: 4px;
+  background: rgba(255, 175, 40, 0.1);
+  border: 1px solid rgba(255, 215, 147, 0.25);
+  color: rgba(255, 215, 147, 0.6);
+  font-size: 0.68em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+// Body content
+.blog-body {
+  max-width: 52em;
+  margin: 0 auto;
+}
+
+.blog-section {
+  margin-bottom: 2.5em;
+
+  p {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 0.9em;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1em !important;
+
+    &:last-child { margin-bottom: 0 !important; }
+  }
+}
+
+.blog-section-title {
+  font-family: 'RudaRegular', 'Work Sans', Arial, sans-serif;
+  font-size: 1.15em;
+  color: $project-accent;
+  margin-bottom: 0.75em !important;
+  padding-bottom: 0.45em;
+  border-bottom: 1px solid rgba(255, 215, 147, 0.15);
+}
+
+// Photo + caption
+.blog-figure {
+  margin: 0 0 2.5em;
+
+  .blog-img {
+    width: 100%;
+    max-height: 26em;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    border: 1px solid rgba(255, 215, 147, 0.1);
+  }
+
+  figcaption {
+    margin-top: 0.6em;
+    font-size: 0.72em;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    letter-spacing: 0.04em;
+    font-style: italic;
+  }
+}
+
+// Back button row
+.blog-back {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+// ------------------------------------------------------------------
+// Sidebar avatar — spinning colour-wheel ring with headshot overlay
+// ------------------------------------------------------------------
+//
+// Structure (in _includes/sidebar.html):
+//   <li class="avatar">
+//     <img class="headshot" />
+//   </li>
+//
+// How it works:
+//   • li.avatar  — the circle container; overflow:hidden clips the ::before
+//                  conic gradient to the circle shape (the "ring")
+//   • li.avatar::before (from main.css) — the spinning conic-gradient; we
+//                  position it to be centered inside the container
+//   • .headshot  — sits on top (z-index:1), inset by 6px on every side so
+//                  the spinning ring border remains visible
+
+// ------------------------------------------------------------------
+// Two-layer avatar approach:
+//   li.avatar       — full-width list item, no overflow:hidden
+//   .avatar-wrapper — flex centering row  (keeps overflow:visible)
+//   .avatar-ring    — the visible 8em circle with overflow:hidden
+//   .avatar-ring::before — spinning conic-gradient (clipped by ring)
+//   .headshot       — photo inset by 6px so the ring border shows
+// ------------------------------------------------------------------
+
+li.avatar {
+  // Defeat main.css: left:15% and transform:translate(-50%,-50%)
+  transform: none !important;
+  left: auto !important;
+
+  // Full width so the flex wrapper below can centre freely
+  width: 100% !important;
+  height: auto;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0;
+  margin: 0.5em 0 1.5em;
+}
+
+// li.avatar::before from main.css must not render — visual ring is
+// on .avatar-ring::before instead
+li.avatar::before {
+  display: none !important;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.avatar-ring {
+  position: relative;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-ring::before {
+  content: "";
+  height: 500%;
+  width: 500%;
+  position: absolute;
+  top: -200%;
+  left: -200%;
+  z-index: 0;
+  background: conic-gradient(
+    #ffa90a,
+    #ffd793,
+    #ff800a,
+    #ffd793,
+    #ff800a,
+    #ffa90a
+  );
+  animation: spin 3s infinite linear;
+}
+
+.headshot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 70%;
+  clip-path: none;
+  display: block;
+  margin: 0;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1280px) {
+  li.avatar { display: none !important; }
+  .avatar-wrapper, .avatar-ring, .headshot { display: none; }
+}
+
+@media screen and (max-width: 980px) {
+  li.avatar { display: none !important; }
+  .intro-name { font-size: 1.8em; }
+}

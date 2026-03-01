@@ -1,0 +1,29 @@
+<section id="sidebar">
+    {% if page.sidebar_back %}
+    <div class="sidebar-back-row">
+        <a href="{{ page.sidebar_back | relative_url }}" class="sidebar-back-btn">&#8592; Back</a>
+    </div>
+    {% endif %}
+    <div class="inner">
+        <nav>
+            <ul>
+                {% if page.sidebar_sections %}
+                {% for section in page.sidebar_sections %}
+                <li><a href="{{ section.anchor }}" class="scrolly">{{ section.label }}</a></li>
+                {% endfor %}
+                {% else %}
+                <li class="avatar">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-ring">
+                            <img src="{{ '/images/Headshot3.jpg' | relative_url }}" class="headshot" alt="Jia Dian's profile photo">
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#intro" class="scrolly">About Me</a></li>
+                <li><a href="#experience" class="scrolly">Experience</a></li>
+                <li><a href="#one" class="scrolly">Projects</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</section>
