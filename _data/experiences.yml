@@ -1,0 +1,71 @@
+- title: "Equinix Internship"
+  role: "Software Engineer Intern"
+  company: "Equinix Asia Pacific"
+  period: "May 2021 – Aug 2021"
+  image: "images/equinix.jpg"
+  imagePosition: "left 70% top 70%"
+  description: >
+    As a Software Engineer Intern at Equinix Asia Pacific I built automation
+    tools and gained hands-on experience with Agile, DevOps, Linux, and diverse
+    technology stacks. Three main projects: (1) Ansible modules in Python,
+    (2) a command-line utility tool in Python, and (3) a service-probe
+    application in Spring Boot.
+  links:
+    - url: "https://entuedu-my.sharepoint.com/:p:/g/personal/jtan457_e_ntu_edu_sg/Eb6EM1ffO2JBkMhqau75iW0B2LyZIvuK-ynvRf1oHp6wBQ?e=Je36sc"
+      label: "View Slides"
+  tags:
+    - "Python"
+    - "Ansible"
+    - "SSH"
+    - "Spring"
+    - "Spring Boot"
+    - "Java"
+    - "REST API"
+    - "Jira"
+    - "Kubernetes"
+    - "Docker"
+    - "Jenkins"
+
+- title: "Rakuten Internship"
+  role: "Software Engineer Intern (Part-time)"
+  company: "Rakuten Asia"
+  period: "Jan 2022 – May 2022"
+  image: "images/rakuten.jpg"
+  imagePosition: "left 50% top 70%"
+  description: >
+    Part-time intern at Rakuten Asia working on "Rakuten Web Search", a search
+    engine product for Japanese users. As part of the backend team I migrated
+    legacy code in several endpoints into an established Spring Boot codebase.
+  links:
+    - url: "https://www.canva.com/design/DAEwpqdhFwg/aMAGZg34Bl-iMNDFBuVVBQ/view?utm_content=DAEwpqdhFwg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+      label: "View Slides"
+  tags:
+    - "Java"
+    - "Spring Boot"
+    - "API Testing"
+    - "Postman"
+
+- title: "Equinix Asia Pacific"
+  role: "Software Engineer (Senior Associate)"
+  company: "Equinix Asia Pacific"
+  period: "Jun 2022 – Present"
+  image: "images/equinix.jpg"
+  imagePosition: "left 47% top 70%"
+  description: >
+    Joining Equinix full-time as a Software Engineer after my internship, I have continued
+    to grow as an engineer — owning features end-to-end, collaborating across teams, and
+    deepening my expertise in cloud infrastructure, automation, and distributed systems.
+  links:
+    - url: "equinix.html"
+      label: "Read More"
+      internal: true
+  tags:
+    - "Python"
+    - "Java"
+    - "Spring Boot"
+    - "Kubernetes"
+    - "Docker"
+    - "Jenkins"
+    - "Ansible"
+    - "REST API"
+    - "Agile"
