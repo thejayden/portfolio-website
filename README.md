@@ -59,7 +59,7 @@ Each entry follows this shape:
 ```yaml
 - title: "My Project Title"
   image: "images/my-image.jpg"
-  imagePosition: "center center"   # CSS background-position value
+  imagePosition: "center center" # CSS background-position value
   description: >
     A description of the project.
   links:
@@ -80,6 +80,10 @@ Each entry follows this shape:
 
 You need **Ruby 3.x**, **Bundler**, and **Node 18+**.
 
+---
+
+#### macOS
+
 The system Ruby on macOS is too old. Use `rbenv` to install a modern version:
 
 ```bash
@@ -94,6 +98,54 @@ cd /path/to/portfolio-website
 rbenv local 3.3.0
 ```
 
+Install Node 18+ via Homebrew if you don't have it:
+
+```bash
+brew install node
+```
+
+---
+
+#### Windows
+
+**1. Install Ruby via RubyInstaller**
+
+Download and run the **Ruby+Devkit 3.3.x (x64)** installer from
+[rubyinstaller.org/downloads](https://rubyinstaller.org/downloads/).
+
+On the final screen, keep _"Run 'ridk install'"_ checked and select option **3**
+(MSYS2 and MINGW development toolchain) when prompted. This is required to build
+native gems.
+
+Verify the install in a new terminal:
+
+```powershell
+ruby -v    # should print ruby 3.3.x
+```
+
+**2. Install Node.js**
+
+Download and run the **LTS installer** from [nodejs.org](https://nodejs.org/).
+You can also install via winget:
+
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+Restart your terminal after installation, then verify:
+
+```powershell
+node -v    # should print v20.x or v22.x
+npm -v
+```
+
+**3. (Optional) Install Git for Windows**
+
+If you haven't already, download from [git-scm.com](https://git-scm.com/).
+The installer bundles Git Bash, which you can use instead of PowerShell.
+
+---
+
 ### Install dependencies
 
 ```bash
@@ -107,11 +159,13 @@ npm install       # installs Tailwind CSS
 Open two terminals in the project directory:
 
 **Terminal 1 — Tailwind watcher:**
+
 ```bash
 npm run watch:css
 ```
 
 **Terminal 2 — Jekyll dev server:**
+
 ```bash
 bundle exec jekyll serve --livereload
 ```
@@ -128,9 +182,12 @@ Visit **http://localhost:4000/portfolio-website/**
 Deployment is fully automated via GitHub Actions (`.github/workflows/deploy.yml`).
 
 Every push to `main` or `master`:
-1. Installs Node dependencies and builds Tailwind CSS
-2. Installs Ruby dependencies and builds the Jekyll site
-3. Deploys the `_site/` output to GitHub Pages
+
+1. Sets up Node 20 and runs `npm ci` to install Tailwind CSS
+2. Builds the minified Tailwind CSS (`npm run build:css`)
+3. Sets up Ruby 3.3 and runs `bundle install` to install Jekyll + plugins
+4. Builds the Jekyll site (`bundle exec jekyll build`)
+5. Deploys the `_site/` output to GitHub Pages
 
 ### One-time GitHub setup
 
@@ -143,14 +200,14 @@ That's it — the next push will trigger a deployment automatically.
 
 ## Tech Stack
 
-| Technology | Role |
-|---|---|
-| [Jekyll 4](https://jekyllrb.com/) | Static site generator, templating, data loop |
-| [Liquid](https://shopify.github.io/liquid/) | Templating language used in `.html` files |
-| [Tailwind CSS v3](https://tailwindcss.com/) | Utility CSS classes |
-| [Hyperspace (HTML5 UP)](https://html5up.net/hyperspace) | Base theme and layout |
-| [GitHub Actions](https://docs.github.com/en/actions) | CI/CD pipeline |
-| [GitHub Pages](https://pages.github.com/) | Hosting |
+| Technology                                              | Role                                         |
+| ------------------------------------------------------- | -------------------------------------------- |
+| [Jekyll 4](https://jekyllrb.com/)                       | Static site generator, templating, data loop |
+| [Liquid](https://shopify.github.io/liquid/)             | Templating language used in `.html` files    |
+| [Tailwind CSS v3](https://tailwindcss.com/)             | Utility CSS classes                          |
+| [Hyperspace (HTML5 UP)](https://html5up.net/hyperspace) | Base theme and layout                        |
+| [GitHub Actions](https://docs.github.com/en/actions)    | CI/CD pipeline                               |
+| [GitHub Pages](https://pages.github.com/)               | Hosting                                      |
 
 ---
 
