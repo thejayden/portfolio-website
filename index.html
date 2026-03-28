@@ -3,148 +3,163 @@ layout: default
 title: "Jia Dian's Portfolio"
 description: "A portfolio site to showcase my technical projects and journey to becoming a software engineer!"
 extra_scripts:
-  - /assets/js/typewriter.js
+- /assets/js/typewriter.js
 ---
 
 {%- include sidebar.html -%}
 
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Intro -->
     <section id="intro" class="wrapper style1 fullscreen fade-up">
         <div class="inner">
             <h1 class="intro-name"><span id="typed-heading"></span></h1>
             <p class="intro-sub">Or you can call me JD for short &#128516;</p>
             <p class="intro-bio">
-                A Software Engineer with a 3+ years of experience in Web Development,
-                I thrive on analysing and solving problems through clean, purposeful code.
-                I bring a keen eye for design to everything I build and strive to create meaning in my work.
-                Welcome to my portfolio site!
+                A Software Engineer with close to 4 years of experience in Fullstack Web
+                Development, I thrive on analysing and solving problems through clean,
+                purposeful code. I bring a keen eye for design to everything I build and
+                strive to create meaning in my work. Welcome to my portfolio site!
             </p>
             <ul class="actions">
-                <li><a href="#experience" class="button-alt scrolly">Scroll Down</a></li>
+                <li>
+                    <a href="#experience" class="button-alt scrolly">Scroll Down</a>
+                </li>
             </ul>
         </div>
     </section>
 
-    <!-- Experience Divider -->
-    <div class="section-divider">
-        <div class="section-divider-bar">
-            <div class="divider-line"></div>
-            <span class="divider-label">Experience <span class="divider-chevron">&#9660;</span></span>
-            <div class="divider-line"></div>
-        </div>
-        <div class="divider-panel">
-            <div class="divider-timeline">
-                {% for exp in site.data.experiences %}
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-role">{{ exp.role }}</div>
-                        <div class="timeline-company">{{ exp.company }}</div>
-                        {% if exp.period %}<div class="timeline-period">{{ exp.period }}</div>{% endif %}
-                    </div>
-                </div>
-                {% endfor %}
+    <section id="experience">
+        <!-- Experience Divider -->
+        <div class="section-divider">
+            <div class="section-divider-bar">
+                <div class="divider-line"></div>
+                <span class="divider-label">Experience <span class="divider-chevron">&#9660;</span></span>
+                <div class="divider-line"></div>
             </div>
-        </div>
-    </div>
-    <section id="experience" class="wrapper style2 spotlights">
-        {% for exp in site.data.experiences %}
-        <section>
-            <a href="#" onclick="return false" class="image">
-                <img src="{{ exp.image | relative_url }}" alt="{{ exp.title }}" data-position="{{ exp.imagePosition }}" />
-            </a>
-            <div class="content">
-                <div class="inner">
-                    <h2 class="project-title">{{ exp.title }}</h2>
-                    <p>{{ exp.description }}</p>
-                    <ul class="actions">
-                        {% for link in exp.links %}
-                        <li>
-                            <a href="{{ link.url }}" {% unless link.internal %}target="_blank" rel="noopener noreferrer"{% endunless %} class="button">
-                                {{ link.label }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% if exp.tags %}
-                    <div class="tag-container">
-                        {% for tag in exp.tags %}
-                        {% assign icon_entry = site.data.tag_icons | where: "tag", tag | first %}
-                        <div class="tag">
-                            {% if icon_entry %}
-                            <i class="{{ icon_entry.icon }}"></i>
-                            {% else %}
-                            <span class="tag-fallback-text">{{ tag | slice: 0, 2 }}</span>
+            <div class="divider-panel">
+                <div class="divider-timeline">
+                    {% for exp in site.data.experiences %}
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-role">{{ exp.role }}</div>
+                            <div class="timeline-company">{{ exp.company }}</div>
+                            {% if exp.period %}
+                            <div class="timeline-period">{{ exp.period }}</div>
                             {% endif %}
-                            <span class="tag-label">{{ tag }}</span>
                         </div>
-                        {% endfor %}
                     </div>
-                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
+        </div>
+        <section id="experience-body" class="wrapper style2 spotlights">
+            {% for exp in site.data.experiences %}
+            <section>
+                <a href="#" onclick="return false;" class="image">
+                    <img src="{{ exp.image | relative_url }}" alt="{{ exp.title }}"
+                        data-position="{{ exp.imagePosition }}" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2 class="project-title">{{ exp.title }}</h2>
+                        <p>{{ exp.description }}</p>
+                        <ul class="actions">
+                            {% for link in exp.links %}
+                            <li>
+                                <a href="{{ link.url }}" {% unless link.internal %}target="_blank"
+                                    rel="noopener noreferrer" {% endunless %} class="button">
+                                    {{ link.label }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% if exp.tags %}
+                        <div class="tag-container">
+                            {% for tag in exp.tags %} {% assign icon_entry =
+                            site.data.tag_icons | where: "tag", tag | first %}
+                            <div class="tag">
+                                {% if icon_entry %}
+                                <i class="{{ icon_entry.icon }}"></i>
+                                {% else %}
+                                <span class="tag-fallback-text">{{ tag | slice: 0, 2 }}</span>
+                                {% endif %}
+                                <span class="tag-label">{{ tag }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
         </section>
-        {% endfor %}
     </section>
 
-    <!-- Projects Divider -->
-    <div class="section-divider">
-        <div class="section-divider-bar">
-            <div class="divider-line"></div>
-            <span class="divider-label">Projects <span class="divider-chevron">&#9660;</span></span>
-            <div class="divider-line"></div>
-        </div>
-        <div class="divider-panel">
-            <div class="divider-description">
-                <p>A curated collection of personal, academic, and hackathon projects spanning game development, mobile apps, full-stack web applications, and data science. Each project reflects a different skill set and a shared drive to build things that matter.</p>
+    <section id="projects">
+        <!-- Projects Divider -->
+        <div class="section-divider">
+            <div class="section-divider-bar">
+                <div class="divider-line"></div>
+                <span class="divider-label">Projects <span class="divider-chevron">&#9660;</span></span>
+                <div class="divider-line"></div>
             </div>
-        </div>
-    </div>
-
-    <!-- Projects -->
-    <section id="one" class="wrapper style2 spotlights">
-        {% for project in site.data.projects %}
-        <section>
-            <a href="#" onclick="return false" class="image">
-                <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" data-position="{{ project.imagePosition }}" />
-            </a>
-            <div class="content">
-                <div class="inner">
-                    <h2 class="project-title">{{ project.title }}</h2>
-                    <p>{{ project.description }}</p>
-                    <ul class="actions">
-                        {% for link in project.links %}
-                        <li>
-                            <a href="{{ link.url }}" {% unless link.internal %}target="_blank" rel="noopener noreferrer"{% endunless %} class="button">
-                                {{ link.label }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% if project.tags %}
-                    <div class="tag-container">
-                        {% for tag in project.tags %}
-                        {% assign icon_entry = site.data.tag_icons | where: "tag", tag | first %}
-                        <div class="tag">
-                            {% if icon_entry %}
-                            <i class="{{ icon_entry.icon }}"></i>
-                            {% else %}
-                            <span class="tag-fallback-text">{{ tag | slice: 0, 2 }}</span>
-                            {% endif %}
-                            <span class="tag-label">{{ tag }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
+            <div class="divider-panel">
+                <div class="divider-description">
+                    <p>
+                        A curated collection of personal, academic, and hackathon projects
+                        spanning game development, mobile apps, full-stack web applications,
+                        data science and machine learning. Each project reflects a different
+                        skill set and a valuable learning experience.
+                    </p>
                 </div>
             </div>
-        </section>
-        {% endfor %}
-    </section>
+        </div>
 
+        <!-- Projects -->
+        <section id="projects-body" class="wrapper style2 spotlights">
+            {% for project in site.data.projects %}
+            <section>
+                <a href="#" onclick="return false;" class="image">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}"
+                        data-position="{{ project.imagePosition }}" />
+                </a>
+                <div class="content">
+                    <div class="inner">
+                        <h2 class="project-title">{{ project.title }}</h2>
+                        <p>{{ project.description }}</p>
+                        <ul class="actions">
+                            {% for link in project.links %}
+                            <li>
+                                <a href="{{ link.url }}" {% unless link.internal %}target="_blank"
+                                    rel="noopener noreferrer" {% endunless %} class="button">
+                                    {{ link.label }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% if project.tags %}
+                        <div class="tag-container">
+                            {% for tag in project.tags %} {% assign icon_entry =
+                            site.data.tag_icons | where: "tag", tag | first %}
+                            <div class="tag">
+                                {% if icon_entry %}
+                                <i class="{{ icon_entry.icon }}"></i>
+                                {% else %}
+                                <span class="tag-fallback-text">{{ tag | slice: 0, 2 }}</span>
+                                {% endif %}
+                                <span class="tag-label">{{ tag }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+        </section>
+    </section>
 </div>
 
 {%- include footer.html -%}

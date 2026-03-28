@@ -99,7 +99,7 @@
   imagePosition: "right 50%"
   description: >
     During the COVID-19 Circuit Breaker period I took several Coursera courses,
-    including two-course specialisation on React and Bootstrap offered by
+    including a two-course specialisation on React and Bootstrap offered by
     The Hong Kong University of Science and Technology.
   links:
     - url: "https://thejayden.github.io/RistoranteConFusion/"
@@ -143,13 +143,15 @@
   image: "images/cinema.jpg"
   imagePosition: "left 50% top 70%"
   description: >
-    A final-year elective project where a friend and I built a mock cinema
+    A final-year elective project where my friend and I built a mock cinema
     booking website using HTML, CSS, JavaScript, and PHP with a MySQL backend.
     Features include browsing and searching movies, viewing showtimes, booking
     tickets with seat selection, and managing bookings.
   links:
-    - url: "https://jymovies.000webhostapp.com"
-      label: "Website"
+    - url: "https://github.com/thejayden/JY_Movies"
+      label: "GitHub"
+    - url: "https://drive.google.com/file/d/12yQwGTbKJurr6gDXy5iek9AGVImtM5Vz/view?usp=sharing"
+      label: "View Report"
   tags:
     - "HTML"
     - "CSS"
@@ -157,3 +159,30 @@
     - "MySQL"
     - "Wireframing"
     - "Database Design"
+
+- title: "Final Year Project: Machine Learning and Simulation of GPR Data"
+  image: "images/joshua-tsu-AeyAhVqUau8-unsplash.jpg"
+  imagePosition: "center center"
+  description: >
+    Final year project where I worked with Ground Penetrating Radars (GPRs) to 
+    collect and synthesise tree root scans using Generative Adversarial Networks (GANs). 
+    By augmenting the GPR scans, this project aims to address the lack of data used for 
+    tree health monitoring and insights. Through this project, I experienced the full 
+    journey of machine learning, from data collection and preprocessing to model training 
+    and reiteration. By implementing and comparing different GAN architectures 
+    (DCGAN, WGAN-GP, pix2pix), I learned the nuances of making these models work, 
+    from fine tuning parameters and learning rates to recognising signs of mode collapse.
+  links:
+    - url: "https://drive.google.com/file/d/1BN0F6UQ_Ci8-As4_v-blm7cE3GVR4ZoO/view?usp=sharing"
+      label: "View Report"
+  tags:
+    - "Machine Learning"
+    - "Generative Adversarial Networks"
+    - "Data Collection"
+    - "Data Preprocessing"
+    - "Data Augmentation"
+    - "Python"
+    - "PyTorch"
+    - "TensorFlow"
+    - "MATLAB"
+    - "Research and Analysis"

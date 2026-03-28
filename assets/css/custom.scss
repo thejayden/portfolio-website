@@ -72,8 +72,8 @@ $project-accent: rgba(255, 215, 147, 0.77);
 
 // Compress the spotlight rows — override the theme's fixed min-height
 // while keeping the translateX/opacity slide-in animation untouched
-#one.spotlights > section,
-#experience.spotlights > section {
+#projects-body.spotlights > section,
+#experience-body.spotlights > section {
   min-height: 0 !important;
 
   // Image: stretch to the content height and crop to fill
@@ -118,24 +118,24 @@ $project-accent: rgba(255, 215, 147, 0.77);
 }
 
 // Paragraph text in project cards
-#one.spotlights > section > .content > .inner > p,
-#experience.spotlights > section > .content > .inner > p {
+#projects-body.spotlights > section > .content > .inner > p,
+#experience-body.spotlights > section > .content > .inner > p {
   font-size: 0.875em;
   line-height: 1.55;
   margin-bottom: 1.25em !important;
 }
 
 // ul.actions row spacing — flush right
-#one.spotlights > section > .content > .inner ul.actions,
-#experience.spotlights > section > .content > .inner ul.actions {
+#projects-body.spotlights > section > .content > .inner ul.actions,
+#experience-body.spotlights > section > .content > .inner ul.actions {
   margin-top: 0;
   margin-bottom: 1.25em !important;
   justify-content: flex-end;
 }
 
 // Smaller buttons inside project cards only
-#one.spotlights > section .button,
-#experience.spotlights > section .button {
+#projects-body.spotlights > section .button,
+#experience-body.spotlights > section .button {
   font-size: 0.6em !important;
   height: calc(3.25em + 2px) !important;
   line-height: 3.25em !important;
@@ -152,10 +152,10 @@ $project-accent: rgba(255, 215, 147, 0.77);
 }
 
 // Allow tooltips to escape the content/inner containers
-#one.spotlights > section > .content,
-#one.spotlights > section > .content > .inner,
-#experience.spotlights > section > .content,
-#experience.spotlights > section > .content > .inner {
+#projects-body.spotlights > section > .content,
+#projects-body.spotlights > section > .content > .inner,
+#experience-body.spotlights > section > .content,
+#experience-body.spotlights > section > .content > .inner {
   overflow: visible !important;
 }
 
