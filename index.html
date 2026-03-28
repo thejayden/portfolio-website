@@ -4,6 +4,7 @@ title: "Jia Dian's Portfolio"
 description: "A portfolio site to showcase my technical projects and journey to becoming a software engineer!"
 extra_scripts:
 - /assets/js/typewriter.js
+- /assets/js/sort-fab.js
 ---
 
 {%- include sidebar.html -%}
@@ -57,7 +58,7 @@ extra_scripts:
         <section id="experience-body" class="wrapper style2 spotlights">
             {% for exp in site.data.experiences %}
             <section>
-                <a href="#" onclick="return false;" class="image">
+                <a href="#" onclick="return false;" class="image{% if exp.vignette %} vignette{% endif %}">
                     <img src="{{ exp.image | relative_url }}" alt="{{ exp.title }}"
                         data-position="{{ exp.imagePosition }}" />
                 </a>
@@ -69,7 +70,8 @@ extra_scripts:
                             {% for link in exp.links %}
                             <li>
                                 <a href="{{ link.url }}" {% unless link.internal %}target="_blank"
-                                    rel="noopener noreferrer" {% endunless %} class="button">
+                                    rel="noopener noreferrer" {% endunless %}
+                                    class="button{% if link.disabled %} disabled{% endif %}">
                                     {{ link.label }}
                                 </a>
                             </li>
@@ -121,7 +123,7 @@ extra_scripts:
         <section id="projects-body" class="wrapper style2 spotlights">
             {% for project in site.data.projects %}
             <section>
-                <a href="#" onclick="return false;" class="image">
+                <a href="#" onclick="return false;" class="image{% if project.vignette %} vignette{% endif %}">
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}"
                         data-position="{{ project.imagePosition }}" />
                 </a>
@@ -133,7 +135,8 @@ extra_scripts:
                             {% for link in project.links %}
                             <li>
                                 <a href="{{ link.url }}" {% unless link.internal %}target="_blank"
-                                    rel="noopener noreferrer" {% endunless %} class="button">
+                                    rel="noopener noreferrer" {% endunless %}
+                                    class="button{% if link.disabled %} disabled{% endif %}">
                                     {{ link.label }}
                                 </a>
                             </li>
@@ -160,6 +163,15 @@ extra_scripts:
             {% endfor %}
         </section>
     </section>
+
+    <!-- Sort FAB -->
+    <button id="sort-fab" class="sort-fab" aria-label="Sort order">
+        <svg class="sort-fab-svg" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon class="sort-icon-up" points="5,0 10,5 0,5" />
+            <polygon class="sort-icon-down" points="5,11 0,6 10,6" />
+        </svg>
+        <span class="sort-fab-tooltip">Sort by timeline DESC</span>
+    </button>
 </div>
 
 {%- include footer.html -%}

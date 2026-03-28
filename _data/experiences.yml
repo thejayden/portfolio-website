@@ -4,6 +4,7 @@
   period: "May 2021 – Aug 2021"
   image: "images/equinix.jpg"
   imagePosition: "left 70% top 70%"
+  vignette: true
   description: >
     As a Software Engineer Intern at Equinix Asia Pacific I built automation
     tools and gained hands-on experience with Agile, DevOps, Linux, and diverse
@@ -32,6 +33,7 @@
   period: "Jan 2022 – May 2022"
   image: "images/rakuten.jpg"
   imagePosition: "left 50% top 70%"
+  vignette: true
   description: >
     Part-time intern at Rakuten Asia working on "Rakuten Web Search", a search
     engine product for Japanese users. As part of the backend team I migrated
@@ -49,23 +51,29 @@
   role: "Software Engineer (Senior Associate)"
   company: "Equinix Asia Pacific"
   period: "Jun 2022 – Present"
-  image: "images/equinix.jpg"
+  image: "images/equinix-ft.jpg"
   imagePosition: "left 47% top 70%"
+  vignette: true
   description: >
     Joining Equinix full-time as a Software Engineer after my internship, I have continued
     to grow as an engineer — owning features end-to-end, collaborating across teams, and
     deepening my expertise in cloud infrastructure, automation, and distributed systems.
   links:
     - url: "equinix.html"
-      label: "Read More"
+      label: "Read More (coming soon)"
       internal: true
+      disabled: true
   tags:
-    - "Python"
-    - "Java"
+    - "React"
+    - "TypeScript"
+    - "Node.js"
+    - "Microfrontends"
     - "Spring Boot"
+    - "REST API"
+    - "Microservices"
+    - "Database Design"
     - "Kubernetes"
     - "Docker"
-    - "Jenkins"
-    - "Ansible"
-    - "REST API"
+    - "Grafana"
+    - "Apigee"
     - "Agile"

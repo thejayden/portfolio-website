@@ -50,3 +50,10 @@
 - { tag: "TensorFlow", icon: "devicon-tensorflow-original" }
 - { tag: "MATLAB", icon: "devicon-matlab-plain" }
 - { tag: "Research and Analysis", icon: "fas fa-search" }
+- { tag: "TypeScript", icon: "devicon-typescript-plain" }
+- { tag: "Node.js", icon: "devicon-nodejs-plain" }
+- { tag: "Microfrontends", icon: "fas fa-th-large" }
+- { tag: "Microservices", icon: "fas fa-network-wired" }
+- { tag: "Grafana", icon: "devicon-grafana-original" }
+- { tag: "Apigee", icon: "fas fa-exchange-alt" }
+- { tag: "Agile", icon: "fas fa-sync-alt" }
