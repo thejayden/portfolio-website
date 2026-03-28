@@ -1,6 +1,7 @@
 - title: "IM1003 – Sudoku Project"
   image: "images/sudoku-menu2.jpg"
   imagePosition: "center center"
+  vignette: false
   description: >
     A module where we learned the basics of Java OOP and applied what we learned through a project - making a sudoku game using Java GUI (AWT, Swing)
   links:
@@ -13,6 +14,7 @@
 - title: "Summer Project – Magical Musical Box"
   image: "images/harrison-broadbent-fZB51omnY_Y-unsplash.jpg"
   imagePosition: "center center"
+  vignette: false
   description: >
     A project aiming to emulate a musical setup that can play MIDI tunes using
     electrical and electronic parts with Arduino programming. Electronic parts
@@ -28,6 +30,7 @@
 - title: "IM2073 – Unity RPG Game"
   image: "images/unity-proj3.jpg"
   imagePosition: "center center"
+  vignette: false
   description: >
     One of two mini-projects within the IM2073 module. A third-person Role
     Playing Game where the player completes objectives within a time limit while
@@ -42,6 +45,7 @@
 - title: "IM2073 – Eshop Spring-React Web Application"
   image: "images/starwars3.png"
   imagePosition: "center center"
+  vignette: false
   description: >
     The second project for IM2073. Originally tasked to build a web shop using
     Java Servlets and Tomcat; revamped to use Spring Boot as the backend and
@@ -63,6 +67,7 @@
 - title: "EE0005 – Intro to Data Science and Artificial Intelligence"
   image: "images/DSAI.jpg"
   imagePosition: "center center"
+  vignette: false
   description: >
     An introductory module to DSAI covering machine learning techniques, models,
     and basic theory. For the final project, my team analysed a mock IBM HR
@@ -78,6 +83,7 @@
 - title: "SCDF × IBM Hackathon: Elderly Care Smart Solution"
   image: "images/scdf-ibm.jpg"
   imagePosition: "top 34% center"
+  vignette: false
   description: >
     My first hackathon with a group of NTU friends. Problem statement: with more
     elderly people living alone in Singapore, there is high risk of undetected
@@ -97,9 +103,10 @@
 - title: "Own Project: Learning Front-End Web Development"
   image: "images/react.jpg"
   imagePosition: "right 50%"
+  vignette: false
   description: >
     During the COVID-19 Circuit Breaker period I took several Coursera courses,
-    including two-course specialisation on React and Bootstrap offered by
+    including a two-course specialisation on React and Bootstrap offered by
     The Hong Kong University of Science and Technology.
   links:
     - url: "https://thejayden.github.io/RistoranteConFusion/"
@@ -118,6 +125,7 @@
 - title: "IM3080: The Friendly Planner – Flutter Mobile App"
   image: "images/tfp3.jpg"
   imagePosition: "center center"
+  vignette: false
   description: >
     I led a group of 10 coursemates to build a mobile application aimed at
     improving collaboration and inclusiveness. The app's key feature is a shared
@@ -142,14 +150,17 @@
 - title: "IM4717: JY Movies – Web Application Design"
   image: "images/cinema.jpg"
   imagePosition: "left 50% top 70%"
+  vignette: false
   description: >
-    A final-year elective project where a friend and I built a mock cinema
+    A final-year elective project where my friend and I built a mock cinema
     booking website using HTML, CSS, JavaScript, and PHP with a MySQL backend.
     Features include browsing and searching movies, viewing showtimes, booking
     tickets with seat selection, and managing bookings.
   links:
-    - url: "https://jymovies.000webhostapp.com"
-      label: "Website"
+    - url: "https://github.com/thejayden/JY_Movies"
+      label: "GitHub"
+    - url: "https://drive.google.com/file/d/12yQwGTbKJurr6gDXy5iek9AGVImtM5Vz/view?usp=sharing"
+      label: "View Report"
   tags:
     - "HTML"
     - "CSS"
@@ -157,3 +168,31 @@
     - "MySQL"
     - "Wireframing"
     - "Database Design"
+
+- title: "Final Year Project: Machine Learning and Simulation of GPR Data"
+  image: "images/joshua-tsu-AeyAhVqUau8-unsplash.jpg"
+  imagePosition: "center center"
+  vignette: false
+  description: >
+    Final year project where I worked with Ground Penetrating Radars (GPRs) to 
+    collect and synthesise tree root scans using Generative Adversarial Networks (GANs). 
+    By augmenting the GPR scans, this project aims to address the lack of data used for 
+    tree health monitoring and insights. Through this project, I experienced the full 
+    journey of machine learning, from data collection and preprocessing to model training 
+    and reiteration. By implementing and comparing different GAN architectures 
+    (DCGAN, WGAN-GP, pix2pix), I learned the nuances of making these models work, 
+    from fine tuning parameters and learning rates to recognising signs of mode collapse.
+  links:
+    - url: "https://drive.google.com/file/d/1BN0F6UQ_Ci8-As4_v-blm7cE3GVR4ZoO/view?usp=sharing"
+      label: "View Report"
+  tags:
+    - "Machine Learning"
+    - "Generative Adversarial Networks"
+    - "Data Collection"
+    - "Data Preprocessing"
+    - "Data Augmentation"
+    - "Python"
+    - "PyTorch"
+    - "TensorFlow"
+    - "MATLAB"
+    - "Research and Analysis"

@@ -72,8 +72,8 @@ $project-accent: rgba(255, 215, 147, 0.77);
 
 // Compress the spotlight rows — override the theme's fixed min-height
 // while keeping the translateX/opacity slide-in animation untouched
-#one.spotlights > section,
-#experience.spotlights > section {
+#projects-body.spotlights > section,
+#experience-body.spotlights > section {
   min-height: 0 !important;
 
   // Image: stretch to the content height and crop to fill
@@ -90,6 +90,22 @@ $project-accent: rgba(255, 215, 147, 0.77);
     // Replace the harsh yellow glow with a warm orange on hover
     &:hover {
       filter: drop-shadow(0px 0px 22px rgba(207, 153, 37, 0.75)) !important;
+    }
+
+    // Vignette overlay — rendered via ::after so it sits above the image
+    // but below the existing :before overlay used by the spotlights animation.
+    // Only applied when the .vignette class is present on the .image element.
+    &.vignette::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
+      z-index: 1;
     }
 
     img {
@@ -118,24 +134,24 @@ $project-accent: rgba(255, 215, 147, 0.77);
 }
 
 // Paragraph text in project cards
-#one.spotlights > section > .content > .inner > p,
-#experience.spotlights > section > .content > .inner > p {
+#projects-body.spotlights > section > .content > .inner > p,
+#experience-body.spotlights > section > .content > .inner > p {
   font-size: 0.875em;
   line-height: 1.55;
   margin-bottom: 1.25em !important;
 }
 
 // ul.actions row spacing — flush right
-#one.spotlights > section > .content > .inner ul.actions,
-#experience.spotlights > section > .content > .inner ul.actions {
+#projects-body.spotlights > section > .content > .inner ul.actions,
+#experience-body.spotlights > section > .content > .inner ul.actions {
   margin-top: 0;
   margin-bottom: 1.25em !important;
   justify-content: flex-end;
 }
 
 // Smaller buttons inside project cards only
-#one.spotlights > section .button,
-#experience.spotlights > section .button {
+#projects-body.spotlights > section .button,
+#experience-body.spotlights > section .button {
   font-size: 0.6em !important;
   height: calc(3.25em + 2px) !important;
   line-height: 3.25em !important;
@@ -152,10 +168,10 @@ $project-accent: rgba(255, 215, 147, 0.77);
 }
 
 // Allow tooltips to escape the content/inner containers
-#one.spotlights > section > .content,
-#one.spotlights > section > .content > .inner,
-#experience.spotlights > section > .content,
-#experience.spotlights > section > .content > .inner {
+#projects-body.spotlights > section > .content,
+#projects-body.spotlights > section > .content > .inner,
+#experience-body.spotlights > section > .content,
+#experience-body.spotlights > section > .content > .inner {
   overflow: visible !important;
 }
 
@@ -196,6 +212,113 @@ $project-accent: rgba(255, 215, 147, 0.77);
     border-color: rgba(255, 215, 147, 0.7);
     box-shadow: 0 0 10px rgba(255, 175, 40, 0.28);
     color: rgba(255, 215, 147, 1);
+  }
+}
+
+// ------------------------------------------------------------------
+// Sort FAB (floating action button — top-right corner)
+// ------------------------------------------------------------------
+
+.sort-fab {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50%;
+  // background: rgba(80, 66, 36, 0.2);
+  background: rgba(255, 175, 40, 0.2);
+  border: none;
+  color: $project-accent;
+  font-size: 1.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  // SVG icon — single element, perfectly centered by the button's flexbox
+  .sort-fab-svg {
+    width: 0.65em;
+    height: 0.72em;
+    display: block;
+    fill: currentColor;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .sort-icon-up,
+  .sort-icon-down {
+    transition: opacity 0.25s ease;
+  }
+
+  // Default state: original order — up arrow active
+  .sort-icon-up   { opacity: 1; }
+  .sort-icon-down { opacity: 0.28; }
+
+  &:hover {
+    // background: rgba(105, 86, 44, 0.97);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55),
+                0 0 10px rgba(255, 175, 40, 0.2);
+    transform: scale(1.08);
+
+    .sort-fab-tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.is-reversed {
+    background: rgba(255, 175, 40, 0.2);
+
+    // Reversed state: DESC order — down arrow active
+    .sort-icon-up   { opacity: 0.28; }
+    .sort-icon-down { opacity: 1; }
+  }
+
+  // At <=large (<=1280px) the sidebar becomes a 3.5em horizontal top bar —
+  // shift the FAB down so it sits just below it.
+  @media screen and (max-width: 1280px) {
+    top: calc(3.5em + 0.75rem);
+  }
+
+  // At <=small (<=736px) the sidebar is hidden entirely — restore original position.
+  @media screen and (max-width: 736px) {
+    top: 1.5rem;
+  }
+}
+
+.sort-fab-tooltip {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  left: auto;
+  transform: translateY(-5px);
+  background: rgba(22, 18, 8, 0.96);
+  color: rgba(255, 215, 147, 0.9);
+  font-size: 0.5em;
+  white-space: nowrap;
+  padding: 0.1em 0.4em;
+  line-height: 1;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 215, 147, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.04em;
+
+  // Arrow pointing up, aligned to button center (button is 3rem wide, right-anchored)
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: calc(1.5rem - 4px);
+    left: auto;
+    border: 4px solid transparent;
+    border-bottom-color: rgba(22, 18, 8, 0.96);
   }
 }
 
